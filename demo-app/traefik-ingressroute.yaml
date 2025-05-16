@@ -1,0 +1,19 @@
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: hello-world
+  namespace: demo-app
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - kind: Rule
+      match: Host(`hello-world.arkhn.test`) && PathPrefix(`/`)
+      services:
+        - name: hello-world
+          port: 80
+  tls:
+    secretName: hello-world-cert
+    options:
+      name: mtls-option
+      namespace: demo-app

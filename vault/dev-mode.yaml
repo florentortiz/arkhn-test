@@ -1,0 +1,7 @@
+server:
+  dev:
+    enabled: true
+    devRootToken: "rootroot"
+
+injector:
+  enabled: false

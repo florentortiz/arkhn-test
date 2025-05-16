@@ -1,0 +1,16 @@
+# values.yaml
+providers:
+  kubernetesIngress:
+    enabled: true
+  # Enable the GatewayAPI provider
+  kubernetesGateway:
+    enabled: true
+# Allow the Gateway to expose HTTPRoute from all namespaces
+gateway:
+  namespacePolicy: All
+logs:
+    general:
+      format: json
+    access:
+      enabled: true
+      format: json
